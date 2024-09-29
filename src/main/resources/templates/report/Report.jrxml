@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ExampleReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a96a3b09-ebd3-4082-9387-c05bcaf78aa6">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <parameter name="voucher_id" class="java.lang.String"/>
+    <parameter name="current_date" class="java.lang.String"/>
+    <parameter name="AmountPaid" class="java.math.BigDecimal"/>
+    <parameter name="payment_method" class="java.lang.String"/>
+    <parameter name="parent_name" class="java.lang.String"/>
+    <parameter name="child_name" class="java.lang.String"/>
+    <parameter name="imageDir" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="135" splitType="Stretch">
+            <staticText>
+                <reportElement x="10" y="20" width="540" height="40" uuid="7dc2044a-7e29-4e29-846c-6a8e4299fdae"/>
+                <textElement textAlignment="Center">
+                    <font size="26"/>
+                </textElement>
+                <text><![CDATA[¡Comprobante electrónico!]]></text>
+            </staticText>
+            <image>
+                <reportElement x="252" y="74" width="50" height="50" uuid="ef6d8037-a770-4d54-b462-9c62f1b54f78"/>
+                <imageExpression><![CDATA[$P{imageDir} + "check.png"]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="115" splitType="Stretch">
+            <staticText>
+                <reportElement x="190" y="18" width="285" height="70" uuid="4e1e68f2-1436-45e1-a23d-ec608524c038"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[Para cualquier reclamo referente a la contratación del servicio debe presentar el debido comprobante de pago.]]></text>
+            </staticText>
+            <image>
+                <reportElement x="80" y="26" width="50" height="50" uuid="34117928-382e-4ca6-83a0-eb6ea865d787"/>
+                <imageExpression><![CDATA[$P{imageDir} + "lightbulb.png"]]></imageExpression>
+            </image>
+            <rectangle>
+                <reportElement mode="Transparent" x="0" y="10" width="544" height="100" uuid="0d843537-e4a2-467c-96de-1920a6ccfe27"/>
+                <graphicElement>
+                    <pen lineColor="#DBC8C8"/>
+                </graphicElement>
+            </rectangle>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="110" splitType="Stretch">
+            <staticText>
+                <reportElement x="180" y="20" width="123" height="20" uuid="e5831614-d9cc-4773-867a-a57f8b6e0fa9"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Comprobante Nro.]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="310" y="20" width="165" height="20" uuid="3d7f564a-bf10-4d10-acd3-dd89b56ce350"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{voucher_id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="10" y="50" width="520" height="30" uuid="feda4eb4-6312-4d1a-b1f2-21a94def41b2"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{current_date}]]></textFieldExpression>
+            </textField>
+            <rectangle>
+                <reportElement mode="Transparent" x="1" y="5" width="544" height="100" uuid="ab4ae221-10f8-4892-8b93-8d50cf6f6d0d"/>
+                <graphicElement>
+                    <pen lineColor="#DBC8C8"/>
+                </graphicElement>
+            </rectangle>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="318" splitType="Stretch">
+            <textField>
+                <reportElement x="180" y="30" width="300" height="30" uuid="5aa8d25c-f60b-4b10-a7e1-1a15894bd09e"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA["$" +  $P{AmountPaid}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="30" y="30" width="150" height="30" uuid="6235f748-ce2a-4de7-ba1a-8e83bc205003"/>
+                <textElement>
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Valor Pagado:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="30" y="60" width="150" height="30" uuid="5a64100a-63b6-4852-8d91-46cad20d2195"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Medio de pago:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="30" y="90" width="150" height="30" uuid="1efc2df6-bacf-40b3-b4ec-859538cbba0b"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Nombre acudiente:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="30" y="120" width="150" height="30" uuid="eff907e8-2e3a-4d8b-9a05-d1d08e769cc1"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <text><![CDATA[Nombre estudiante:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="180" y="60" width="300" height="30" uuid="cb62267f-5915-42ac-9ba3-1cbdcc220a98"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{payment_method}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="90" width="300" height="30" uuid="07f2a356-359e-4613-9e29-196070fa03be"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{parent_name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="180" y="120" width="300" height="30" uuid="3244a4a7-b0d2-4bcf-93b7-7f217646eeff"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="16"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{child_name}]]></textFieldExpression>
+            </textField>
+            <rectangle>
+                <reportElement mode="Transparent" x="0" y="10" width="544" height="160" uuid="7711a813-15a3-4080-8663-01984020da22"/>
+                <graphicElement>
+                    <pen lineStyle="Dashed" lineColor="#DBC8C8"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="386" y="243" width="158" height="65" uuid="cc24647e-c378-4262-ada0-237490912520"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[___________________
+Santiago Perez]]></text>
+            </staticText>
+            <image>
+                <reportElement x="395" y="200" width="141" height="70" uuid="bd4ded1b-c313-406e-a227-decc915bcea5"/>
+                <imageExpression><![CDATA[$P{imageDir} +"firma.png"]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="58" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
